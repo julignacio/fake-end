@@ -7,7 +7,7 @@ import { startServer } from './run.js';
 const program = new Command();
 
 program
-  .name('fakeit')
+  .name('fake-end')
   .description('A modern CLI tool for mocking backend APIs using YAML files')
   .version('1.0.0');
 

@@ -1,4 +1,4 @@
-# FakeIt
+# Fake-End
 
 A modern TypeScript CLI tool for mocking backend APIs using YAML files. Perfect for frontend developers who need to simulate backend APIs during development.
 
@@ -15,13 +15,13 @@ A modern TypeScript CLI tool for mocking backend APIs using YAML files. Perfect 
 ## Installation
 
 ```bash
-npm install -g fakeit
+npm install -g fake-end
 ```
 
 Or use it directly with npx:
 
 ```bash
-npx fakeit run
+npx fake-end run
 ```
 
 ## Quick Start
@@ -38,7 +38,7 @@ echo "- method: GET
   body:
     message: 'Hello, World!'" > mock_server/hello.yaml
 
-npx fakeit run
+npx fake-end run
 ```
 
 Your mock server will be running at `http://localhost:4000`!
@@ -103,7 +103,7 @@ Access request data in your responses:
 ## CLI Options
 
 ```bash
-fakeit run [options]
+fake-end run [options]
 
 Options:
   -p, --port <port>        Port to run the server on (default: 4000)
