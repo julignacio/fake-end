@@ -1,0 +1,46 @@
+- method: GET
+  path: /
+  status: 200
+  body:
+    data:
+      - id: "prod-1"
+        name: "Laptop"
+        price: 999.99
+        category: "Electronics"
+        inStock: true
+      - id: "prod-2"
+        name: "Coffee Mug"
+        price: 12.99
+        category: "Kitchen"
+        inStock: true
+    pagination:
+      page: 1
+      limit: 10
+      total: 2
+  delayMs: 120
+
+- method: GET
+  path: /:id
+  status: 200
+  body:
+    id: ":id"
+    name: "Product :id"
+    price: 49.99
+    category: "General"
+    description: "This is a mock product with ID :id"
+    inStock: true
+    reviews:
+      - rating: 5
+        comment: "Great product!"
+        author: "Mock Reviewer"
+  delayMs: 80
+
+- method: POST
+  path: /
+  status: 201
+  body:
+    id: "new-product-id"
+    name: "{{body.name}}"
+    price: "{{body.price}}"
+    category: "{{body.category}}"
+    message: "Product created successfully"

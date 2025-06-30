@@ -1,0 +1,52 @@
+{
+  "name": "fakeit",
+  "version": "1.0.0",
+  "description": "A modern TypeScript CLI tool for mocking backend APIs using YAML files",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "fakeit": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli/index.ts",
+    "start": "node dist/cli/index.js",
+    "lint": "eslint src --ext .ts",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "mock",
+    "api",
+    "yaml",
+    "typescript",
+    "development",
+    "server"
+  ],
+  "author": "Julian Ramirez",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "express": "^4.18.2",
+    "glob": "^10.3.10",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "@types/express": "^4.17.21",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^9.30.0",
+    "globals": "^16.2.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.35.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

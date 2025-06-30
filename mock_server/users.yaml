@@ -1,0 +1,48 @@
+- method: GET
+  path: /
+  status: 200
+  body:
+    - id: "1"
+      name: "John Doe"
+      email: "john@example.com"
+      createdAt: "2024-01-01T00:00:00Z"
+    - id: "2"
+      name: "Jane Smith"
+      email: "jane@example.com"
+      createdAt: "2024-01-02T00:00:00Z"
+  delayMs: 100
+
+- method: GET
+  path: /:id
+  status: 200
+  body:
+    id: ":id"
+    name: "Mock User :id"
+    email: "user:id@example.com"
+    createdAt: "2024-01-01T00:00:00Z"
+  delayMs: 150
+
+- method: POST
+  path: /
+  status: 201
+  body:
+    id: "123"
+    name: "{{body.name}}"
+    email: "{{body.email}}"
+    createdAt: "2024-01-01T00:00:00Z"
+    message: "User created successfully"
+
+- method: PUT
+  path: /:id
+  status: 200
+  body:
+    id: ":id"
+    name: "{{body.name}}"
+    email: "{{body.email}}"
+    updatedAt: "2024-01-01T12:00:00Z"
+    message: "User updated successfully"
+
+- method: DELETE
+  path: /:id
+  status: 204
+  body: null

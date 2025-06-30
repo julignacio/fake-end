@@ -1,0 +1,38 @@
+- method: POST
+  path: /login
+  status: 200
+  body:
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.mock.token"
+    user:
+      id: "1"
+      email: "{{body.email}}"
+      name: "Mock User"
+    expiresIn: 3600
+  delayMs: 200
+
+- method: POST
+  path: /register
+  status: 201
+  body:
+    message: "User registered successfully"
+    user:
+      id: "new-user-id"
+      email: "{{body.email}}"
+      name: "{{body.name}}"
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.mock.registration.token"
+
+- method: POST
+  path: /logout
+  status: 200
+  body:
+    message: "Logged out successfully"
+
+- method: GET
+  path: /me
+  status: 200
+  body:
+    id: "1"
+    email: "current-user@example.com"
+    name: "Current User"
+    role: "user"
+  delayMs: 50
